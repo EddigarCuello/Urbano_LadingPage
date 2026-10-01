@@ -84,6 +84,8 @@ document.getElementById("subscribe").addEventListener("click", () => {
     msg.textContent = "¡Listo! Revisa tu correo para tu cupón del 10%.";
     correo.value = "";
   } else {
-    msg.textContent = "Escribe un correo válido, por ejemplo nombre@correo.com.";
+    msg.textContent = "nombre@correo.com.";
   }
 });
+
+//comentario de prueba
