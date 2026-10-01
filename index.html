@@ -12,13 +12,6 @@
 </head>
 <body>
 
-  <!-- Prenda reutilizable (camiseta) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="tee" viewBox="0 0 200 200">
-      <path d="M70 20 L40 32 L8 70 L36 92 L52 76 L52 180 L148 180 L148 76 L164 92 L192 70 L160 32 L130 20 C124 36 76 36 70 20Z" fill="currentColor"/>
-    </symbol>
-  </svg>
-
   <header class="nav">
     <a href="#inicio" class="logo">URBANO</a>
     <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -36,7 +29,7 @@
       <div class="hero-text">
         <h1>Nueva colección <span class="hl">calle</span> 2026</h1>
         <p class="offer">Hasta 30% de descuento</p>
-        <p>Camisetas, hoodies y gorras con diseños únicos. Hechas en Medellín, pensadas para que te vean.</p>
+        <p>Camisetas y hoodies con diseños únicos. Hechas en Medellín, pensadas para que te vean.</p>
         <div class="actions">
           <a href="#tienda" class="btn">Comprar ahora</a>
           <a href="#oferta" class="btn ghost">Ver ofertas</a>
@@ -44,38 +37,100 @@
         <p class="free"><b>Envío gratis</b> en compras desde $150.000</p>
       </div>
 
-      <div class="hero-art" aria-hidden="true">
-        <svg class="big-tee"><use href="#tee"/></svg>
+      <div class="hero-art">
+        <!-- Cambia el valor de src por la ruta de tu imagen, por ejemplo: images/portada.jpg -->
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Estilo urbano de la nueva colección" fetchpriority="high">
         <div class="sticker">-30%</div>
+        <p class="photo-note">ESTILO PROPIO<br>DESDE MEDELLÍN</p>
       </div>
     </section>
 
+    <section class="editorial" aria-label="La actitud URBANO">
+      <p class="eyebrow">VESTIR DISTINTO</p>
+      <p class="editorial-line">La calle no sigue tendencias.<br><span>Las convierte en propias.</span></p>
+      <p class="editorial-copy">Prendas cómodas, combinables y con carácter. Diseñadas para acompañarte del primer plan del día al último de la noche.</p>
+      <span class="editorial-mark" aria-hidden="true">U.</span>
+    </section>
+
     <section id="tienda" class="block">
-      <h2>Lo más vendido</h2>
-      <div class="products">
+      <div class="catalog-heading">
+        <h2>Lo más vendido</h2>
+        <div class="carousel-controls" role="group" aria-label="Controles de prendas">
+          <button class="carousel-arrow" type="button" data-carousel-direction="prev" aria-label="Ver prendas anteriores" aria-controls="products" disabled>&larr;</button>
+          <button class="carousel-arrow" type="button" data-carousel-direction="next" aria-label="Ver prendas siguientes" aria-controls="products">&rarr;</button>
+        </div>
+      </div>
+      <div class="products" id="products" role="region" aria-label="Carrusel de prendas" tabindex="0">
         <article class="product" style="--c:#ff2e93">
-          <div class="thumb"><svg><use href="#tee"/></svg></div>
-          <h3>Camiseta Neón</h3>
+          <!-- Reemplaza estas URL por imágenes locales para usar tus propias fotos -->
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camiseta Essential" loading="lazy"></div>
+          <h3>Camiseta Essential</h3>
+          <p class="description">Un básico de corte relajado para combinar sin pensarlo demasiado.</p>
           <p class="price">$59.900 <s>$79.900</s></p>
-          <button class="add" data-name="Camiseta Neón">Agregar</button>
+          <button class="add" data-name="Camiseta Essential">Agregar</button>
         </article>
         <article class="product" style="--c:#14e0ff">
-          <div class="thumb"><svg><use href="#tee"/></svg></div>
-          <h3>Camiseta Cielo</h3>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camiseta Oversize" loading="lazy"></div>
+          <h3>Camiseta Oversize</h3>
+          <p class="description">Silueta amplia y cómoda para un look urbano con más presencia.</p>
           <p class="price">$64.900</p>
-          <button class="add" data-name="Camiseta Cielo">Agregar</button>
+          <button class="add" data-name="Camiseta Oversize">Agregar</button>
         </article>
         <article class="product" style="--c:#ffe500">
-          <div class="thumb"><svg><use href="#tee"/></svg></div>
-          <h3>Camiseta Sol</h3>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camiseta Street" loading="lazy"></div>
+          <h3>Camiseta Street</h3>
+          <p class="description">Un diseño versátil que funciona con tus jeans y tenis favoritos.</p>
           <p class="price">$54.900 <s>$69.900</s></p>
-          <button class="add" data-name="Camiseta Sol">Agregar</button>
+          <button class="add" data-name="Camiseta Street">Agregar</button>
         </article>
         <article class="product" style="--c:#7cff4f">
-          <div class="thumb"><svg><use href="#tee"/></svg></div>
-          <h3>Camiseta Lima</h3>
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camiseta Daily" loading="lazy"></div>
+          <h3>Camiseta Daily</h3>
+          <p class="description">Ligera y fácil de llevar, pensada para repetirla toda la semana.</p>
           <p class="price">$59.900</p>
-          <button class="add" data-name="Camiseta Lima">Agregar</button>
+          <button class="add" data-name="Camiseta Daily">Agregar</button>
+        </article>
+        <article class="product" style="--c:#c49aaa">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Hoodie Oversize" loading="lazy"></div>
+          <h3>Hoodie Oversize</h3>
+          <p class="description">Abrigo suave y amplio para sumar una capa cuando baja la temperatura.</p>
+          <p class="price">$119.900 <s>$169.900</s></p>
+          <button class="add" data-name="Hoodie Oversize">Agregar</button>
+        </article>
+        <article class="product" style="--c:#b88978">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Chaqueta Biker" loading="lazy"></div>
+          <h3>Chaqueta Biker</h3>
+          <p class="description">Una capa con carácter para completar tus looks de tarde y de noche.</p>
+          <p class="price">$189.900</p>
+          <button class="add" data-name="Chaqueta Biker">Agregar</button>
+        </article>
+        <article class="product" style="--c:#91a7ad">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Chaqueta Urbana" loading="lazy"></div>
+          <h3>Chaqueta Urbana</h3>
+          <p class="description">Una prenda exterior fácil de combinar sobre tus camisetas favoritas.</p>
+          <p class="price">$159.900 <s>$189.900</s></p>
+          <button class="add" data-name="Chaqueta Urbana">Agregar</button>
+        </article>
+        <article class="product" style="--c:#96a584">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Hoodie Clásica" loading="lazy"></div>
+          <h3>Hoodie Clásica</h3>
+          <p class="description">Un abrigo suave de silueta cómoda para los días más frescos.</p>
+          <p class="price">$109.900</p>
+          <button class="add" data-name="Hoodie Clásica">Agregar</button>
+        </article>
+        <article class="product" style="--c:#d8c98f">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Gorra Essential" loading="lazy"></div>
+          <h3>Gorra Essential</h3>
+          <p class="description">El accesorio sencillo que remata el conjunto y suma protección solar.</p>
+          <p class="price">$49.900</p>
+          <button class="add" data-name="Gorra Essential">Agregar</button>
+        </article>
+        <article class="product" style="--c:#c49aaa">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camiseta Gráfica" loading="lazy"></div>
+          <h3>Camiseta Gráfica</h3>
+          <p class="description">Un estampado protagonista para darle personalidad a un básico.</p>
+          <p class="price">$69.900</p>
+          <button class="add" data-name="Camiseta Gráfica">Agregar</button>
         </article>
       </div>
     </section>
