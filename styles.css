@@ -1,0 +1,754 @@
+:root {
+  /* =========================
+     PALETA
+  ========================= */
+
+  --black: #121214;
+
+  /* Colores principales */
+  --yellow: #d8c98f;
+  --pink: #c49aaa;
+  --blue: #91a7ad;
+  --green: #96a584;
+  --terracotta: #b88978;
+
+  --white: #eeeeeb;
+  --muted: #a3a19d;
+
+  /* Superficies */
+  --surface: #1a1a1c;
+  --surface-light: #222225;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 16px 6vw;
+
+  background: rgba(18, 18, 20, 0.94);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(216, 201, 143, 0.12);
+}
+
+.logo {
+  font-family: "Anton", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.nav nav {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+
+  padding: 6px 16px;
+  border-radius: 999px;
+
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.nav nav a:hover {
+  color: var(--yellow);
+}
+
+.nav nav a.active {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.cart {
+  background: var(--pink);
+  color: var(--black);
+
+  font-weight: 700;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.burger {
+  display: none;
+
+  background: none;
+  border: 0;
+
+  color: var(--yellow);
+  font-size: 1.8rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 120px 6vw 60px;
+
+  background:
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(196, 154, 170, 0.20),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 5% 95%,
+      rgba(184, 137, 120, 0.14),
+      transparent 40%
+    ),
+    var(--black);
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 28%;
+
+  width: 300px;
+  height: 90px;
+
+  background: var(--yellow);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    92% 40%,
+    100% 70%,
+    70% 100%,
+    40% 70%,
+    15% 95%,
+    5% 50%
+  );
+
+  opacity: 0.9;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  line-height: 1.02;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.hl {
+  background: var(--yellow);
+  color: var(--black);
+
+  padding: 0 0.15em;
+}
+
+.offer {
+  color: var(--yellow);
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.hero-text p:not(.offer):not(.free) {
+  max-width: 50ch;
+
+  color: var(--muted);
+
+  margin: 8px 0 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.free {
+  margin-top: 26px;
+}
+
+.free b {
+  color: var(--pink);
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn {
+  display: inline-block;
+
+  background: var(--yellow);
+  color: var(--black);
+
+  font: 700 1rem "Rubik", sans-serif;
+
+  text-decoration: none;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  border: 2px solid var(--yellow);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 6px 0 var(--pink);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--white);
+
+  border-color: var(--pink);
+}
+
+.btn.ghost:hover {
+  box-shadow: 0 6px 0 var(--pink);
+}
+
+.btn.dark {
+  background: var(--black);
+  color: var(--yellow);
+
+  border-color: var(--black);
+}
+
+.btn.dark:hover {
+  box-shadow: 0 6px 0 var(--pink);
+}
+
+
+/* =========================
+   HERO ART
+========================= */
+
+.hero-art {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+}
+
+.big-tee {
+  width: min(100%, 460px);
+
+  aspect-ratio: 1;
+
+  color: var(--pink);
+
+  filter: drop-shadow(14px 14px 0 var(--terracotta));
+
+  transform: rotate(-6deg);
+}
+
+.sticker {
+  position: absolute;
+
+  top: 4%;
+  right: 6%;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+  color: var(--black);
+
+  font: 2.2rem "Anton", sans-serif;
+
+  display: grid;
+  place-items: center;
+
+  transform: rotate(12deg);
+
+  animation: pop 2.4s ease-in-out infinite;
+}
+
+@keyframes pop {
+  50% {
+    transform: rotate(12deg) scale(1.1);
+  }
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.block {
+  padding: 90px 6vw;
+}
+
+h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+
+  font-size: clamp(2rem, 5vw, 3.4rem);
+
+  text-transform: uppercase;
+
+  color: var(--yellow);
+
+  margin-bottom: 32px;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.products {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
+  gap: 26px;
+}
+
+
+/*
+  Cada producto tiene su propio color.
+  Los colores son desaturados para que
+  no compitan entre ellos.
+*/
+
+.product {
+  --c: var(--pink);
+
+  background: var(--surface);
+
+  border: 2px solid var(--c);
+
+  border-radius: 18px;
+
+  padding: 16px;
+
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+
+/* Rosa viejo */
+
+.product:nth-child(1) {
+  --c: #c49aaa;
+}
+
+
+/* Azul grisáceo */
+
+.product:nth-child(2) {
+  --c: #91a7ad;
+}
+
+
+/* Amarillo crema */
+
+.product:nth-child(3) {
+  --c: #cdbf82;
+}
+
+
+/* Verde salvia */
+
+.product:nth-child(4) {
+  --c: #96a584;
+}
+
+
+.product:hover {
+  transform: translateY(-6px);
+}
+
+
+/* Imagen / camiseta */
+
+.thumb {
+  background: color-mix(
+    in srgb,
+    var(--c) 88%,
+    var(--black)
+  );
+
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 18px;
+}
+
+.thumb svg {
+  width: 70%;
+
+  aspect-ratio: 1;
+
+  color: var(--black);
+}
+
+
+/* Información */
+
+.product h3 {
+  margin: 14px 0 2px;
+
+  font-size: 1.15rem;
+}
+
+.price {
+  color: var(--yellow);
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+}
+
+.price s {
+  color: var(--muted);
+
+  font-weight: 400;
+
+  margin-left: 6px;
+}
+
+
+/* Botón */
+
+.add {
+  width: 100%;
+
+  background: var(--c);
+  color: var(--black);
+
+  font: 700 1rem "Rubik", sans-serif;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  padding: 10px;
+
+  cursor: pointer;
+
+  transition:
+    filter 0.2s,
+    transform 0.2s;
+}
+
+.add:hover {
+  filter: brightness(1.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   OFERTA
+========================= */
+
+.deal {
+  background: var(--yellow);
+  color: var(--black);
+
+  text-align: center;
+
+  padding: 80px 6vw;
+}
+
+.deal h2 {
+  color: var(--black);
+
+  margin-bottom: 8px;
+}
+
+.timer {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  margin: 28px 0;
+}
+
+.timer div {
+  background: var(--black);
+  color: var(--white);
+
+  border-radius: 14px;
+
+  padding: 12px 20px;
+
+  min-width: 90px;
+
+  font-size: 0.9rem;
+}
+
+.timer b {
+  display: block;
+
+  font: 2.6rem/1.1 "Anton", sans-serif;
+
+  color: var(--pink);
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact {
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(196, 154, 170, 0.15),
+      transparent 60%
+    );
+}
+
+.contact p {
+  color: var(--muted);
+}
+
+.signup {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin: 24px 0 8px;
+}
+
+.signup input {
+  width: min(100%, 320px);
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  border: 2px solid var(--pink);
+
+  background: var(--surface);
+
+  color: var(--white);
+
+  font: 1rem "Rubik", sans-serif;
+}
+
+.msg {
+  min-height: 1.6em;
+
+  color: var(--pink) !important;
+
+  font-weight: 500;
+}
+
+.phone {
+  margin-top: 24px;
+
+  color: var(--yellow) !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 24px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  border-top: 2px solid var(--yellow);
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+
+  bottom: 24px;
+  left: 50%;
+
+  transform: translate(-50%, 120px);
+
+  background: var(--pink);
+  color: var(--black);
+
+  font-weight: 700;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  transition: transform 0.3s;
+
+  z-index: 20;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding-top: 110px;
+  }
+
+  .hero-art {
+    order: -1;
+  }
+
+  .big-tee {
+    width: 260px;
+  }
+
+  .burger {
+    display: block;
+
+    margin-left: auto;
+  }
+
+  .nav nav {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+
+    background: var(--black);
+
+    padding: 16px 6vw 24px;
+
+    border-bottom: 1px solid rgba(216, 201, 143, 0.12);
+  }
+
+  .nav nav.open {
+    display: flex;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sticker {
+    animation: none;
+  }
+
+  .btn,
+  .product {
+    transition: none;
+  }
+}

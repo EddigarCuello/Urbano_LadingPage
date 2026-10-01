@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URBANO | Ropa urbana</title>
+  <meta name="description" content="Ropa urbana: camisetas, hoodies y gorras. Nueva colección con hasta 30% de descuento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Prenda reutilizable (camiseta) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="tee" viewBox="0 0 200 200">
+      <path d="M70 20 L40 32 L8 70 L36 92 L52 76 L52 180 L148 180 L148 76 L164 92 L192 70 L160 32 L130 20 C124 36 76 36 70 20Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <header class="nav">
+    <a href="#inicio" class="logo">URBANO</a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav id="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#tienda" class="active">Tienda</a>
+      <a href="#oferta">Ofertas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="cart" aria-label="Carrito">🛒 <b id="count">0</b></div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <h1>Nueva colección <span class="hl">calle</span> 2026</h1>
+        <p class="offer">Hasta 30% de descuento</p>
+        <p>Camisetas, hoodies y gorras con diseños únicos. Hechas en Medellín, pensadas para que te vean.</p>
+        <div class="actions">
+          <a href="#tienda" class="btn">Comprar ahora</a>
+          <a href="#oferta" class="btn ghost">Ver ofertas</a>
+        </div>
+        <p class="free"><b>Envío gratis</b> en compras desde $150.000</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg class="big-tee"><use href="#tee"/></svg>
+        <div class="sticker">-30%</div>
+      </div>
+    </section>
+
+    <section id="tienda" class="block">
+      <h2>Lo más vendido</h2>
+      <div class="products">
+        <article class="product" style="--c:#ff2e93">
+          <div class="thumb"><svg><use href="#tee"/></svg></div>
+          <h3>Camiseta Neón</h3>
+          <p class="price">$59.900 <s>$79.900</s></p>
+          <button class="add" data-name="Camiseta Neón">Agregar</button>
+        </article>
+        <article class="product" style="--c:#14e0ff">
+          <div class="thumb"><svg><use href="#tee"/></svg></div>
+          <h3>Camiseta Cielo</h3>
+          <p class="price">$64.900</p>
+          <button class="add" data-name="Camiseta Cielo">Agregar</button>
+        </article>
+        <article class="product" style="--c:#ffe500">
+          <div class="thumb"><svg><use href="#tee"/></svg></div>
+          <h3>Camiseta Sol</h3>
+          <p class="price">$54.900 <s>$69.900</s></p>
+          <button class="add" data-name="Camiseta Sol">Agregar</button>
+        </article>
+        <article class="product" style="--c:#7cff4f">
+          <div class="thumb"><svg><use href="#tee"/></svg></div>
+          <h3>Camiseta Lima</h3>
+          <p class="price">$59.900</p>
+          <button class="add" data-name="Camiseta Lima">Agregar</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="oferta" class="deal">
+      <h2>Oferta relámpago</h2>
+      <p>Hoodies con 30% de descuento. Termina en:</p>
+      <div class="timer" aria-live="off">
+        <div><b id="d">00</b>días</div>
+        <div><b id="h">00</b>horas</div>
+        <div><b id="m">00</b>min</div>
+        <div><b id="s">00</b>seg</div>
+      </div>
+      <a href="#tienda" class="btn dark">Aprovechar oferta</a>
+    </section>
+
+    <section id="contacto" class="block contact">
+      <h2>Entérate primero</h2>
+      <p>Suscríbete y recibe un cupón del 10% en tu primera compra.</p>
+      <div class="signup">
+        <input type="email" id="email" placeholder="tucorreo@ejemplo.com" aria-label="Correo electrónico">
+        <button class="btn" id="subscribe">Suscribirme</button>
+      </div>
+      <p id="msg" class="msg" role="status"></p>
+      <p class="phone">WhatsApp: +57 300 000 0000 · Instagram @urbano.ropa</p>
+    </section>
+  </main>
+
+  <footer>© 2026 URBANO. Tienda de ejemplo.</footer>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
